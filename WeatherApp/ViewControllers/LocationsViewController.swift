@@ -86,11 +86,11 @@ extension LocationsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.reuseIdentifier) as! LocationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.reuseIdentifier) as? LocationTableViewCell
         let location = locations[indexPath.row]
-        cell.configure(with: location)
+        cell!.configure(with: location)
         
-        return cell
+        return cell!
     }
 }
 //MARK: -
