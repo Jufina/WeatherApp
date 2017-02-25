@@ -29,6 +29,7 @@ class LocationsViewController: UIViewController {
         setupTitle()
         setupLocations()
         setupTableView()
+        setupNotificationsToken()
         LocationService.shared.setupLocationManager()
     }
     
@@ -72,6 +73,7 @@ extension LocationsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let location = locations[indexPath.row]
         self.performSegue(withIdentifier: showWeatherSegueIdentifier, sender: location)
+        self.citiesTableView.deselectRow(at: indexPath, animated: false)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,7 +88,7 @@ extension LocationsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.reuseIdentifier) as? LocationTableViewCell
+        let cell = self.citiesTableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.reuseIdentifier) as? LocationTableViewCell
         let location = locations[indexPath.row]
         cell!.configure(with: location)
         
@@ -121,7 +123,7 @@ extension LocationsViewController: Navigation {
 //MARK: - Setup
 extension LocationsViewController: Setup {
     fileprivate func setupTitle() {
-        self.title = "Список городов"
+        self.title = "Список"
     }
     fileprivate func setupTableView() {
         citiesTableView.delegate = self

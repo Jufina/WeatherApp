@@ -68,6 +68,7 @@ extension WeatherDetailsViewController: Setup {
         self.weatherInfoTableView.backgroundColor = UIColor.white
         self.weatherInfoTableView.delegate = self
         self.weatherInfoTableView.dataSource = self
+        self.weatherInfoTableView.allowsSelection = false
     }
 }
 
@@ -93,7 +94,7 @@ extension WeatherDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.reuseIdentifier) as? WeatherTableViewCell
         if cell == nil {
-            cell = WeatherTableViewCell(style: .value2, reuseIdentifier: WeatherTableViewCell.reuseIdentifier)
+            cell = WeatherTableViewCell(style: .value1, reuseIdentifier: WeatherTableViewCell.reuseIdentifier)
         }
         cell!.configure(title: params[indexPath.row], details: self.details[indexPath.row])
         

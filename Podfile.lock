@@ -10,11 +10,6 @@ PODS:
     - GoogleMaps/Base (= 2.1.1)
   - ISO8601DateFormatterValueTransformer (0.6.1):
     - RKValueTransformers (~> 1.1.0)
-  - Realm (2.1.2):
-    - Realm/Headers (= 2.1.2)
-  - Realm/Headers (2.1.2)
-  - RealmSwift (2.1.2):
-    - Realm (= 2.1.2)
   - RestKit (0.27.0):
     - RestKit/Core (= 0.27.0)
   - RestKit/Core (0.27.0):
@@ -46,7 +41,6 @@ DEPENDENCIES:
   - BrightFutures
   - GoogleMaps
   - GooglePlaces
-  - RealmSwift
   - RestKit
   - SDWebImage
   - SwiftMessages
@@ -56,8 +50,6 @@ SPEC CHECKSUMS:
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
-  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
-  RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
   RestKit: a0244db34e14ed9cf059fcee2be6733cc162c34a
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   RKValueTransformers: e5ed67e3811229b616fe01bddeeafe3bb337b1b9
@@ -66,6 +58,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 9d03bb95d394ac60f9c20335e2305dfea9cac70a
   TransitionKit: 9ceccda4cd0cdc0a05ef85eb235e5a3292c3c250
 
-PODFILE CHECKSUM: 073473a5b290fa9460604c0566c1448697b4bdb6
+PODFILE CHECKSUM: b3a09cac8d977f7439b57e48010effe59b7654f7
 
 COCOAPODS: 1.2.0

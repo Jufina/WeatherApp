@@ -5,7 +5,6 @@ target 'WeatherApp' do
   use_frameworks!
 
   pod 'RestKit'
-  pod 'RealmSwift'
   pod 'GooglePlaces'
   pod 'GoogleMaps'
   pod 'BrightFutures'

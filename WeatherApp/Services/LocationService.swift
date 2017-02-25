@@ -72,7 +72,7 @@ private protocol Setup {
 }
 
 private protocol LocationManagement {
-    func addNew(location: Location, successBlock: @escaping (_ locationId: String) -> Void)
+    func addNew(location: Location, successBlock: @escaping (_ locationId: String?) -> Void)
     func addCurrentLocation()
     func save(location: Location)
     func startUpdatingLocation()
@@ -91,7 +91,7 @@ extension LocationService: LocationManagement {
         
     }
     
-    func addNew(location: Location, successBlock: @escaping (_ locationId: String) -> Void) {
+    func addNew(location: Location, successBlock: @escaping (_ locationId: String?) -> Void) {
         WeatherService.shared.getWeather(in: location)
             .flatMap({ (weather) -> Future<Weather, Error> in
                 let locationId = weather.cityId
@@ -119,6 +119,7 @@ extension LocationService: LocationManagement {
                     AlertManager.showError(title: "Error", message: "No image found")
                 case .RepeatedData:
                     AlertManager.showWarning(title: "Error", message: "City added to list already")
+                    successBlock(nil)
                 case .NoNetwork:
                     AlertManager.showError(title: "Error", message: "No network")
                 }
